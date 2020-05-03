@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Bob Smith",
+    "phone": "111-111-1111",
+    "manager": true,
+    "email": "bob@gmail.com"
+  },
+  {
+    "id": 2,
+    "name": "Alyssa Williams",
+    "phone": "222-222-2222",
+    "manager": false,
+    "email": "alyssa@gmail.com"
+  },
+  {
+    "id": 3,
+    "name": "Sam Delay",
+    "phone": "333-333-3333",
+    "manager": false,
+    "email": "sam@gmail.com"
+  },
+  {
+    "id": 4,
+    "name": "Dexter Dun",
+    "phone": "444-444-4444",
+    "manager": false,
+    "email": "dexter@gmail.com"
+  },
+  {
+    "id": 5,
+    "name": "Nancy Crowley",
+    "phone": "555-555-5555",
+    "manager": true,
+    "email": "nancy@gmail.com"
+  },
+  {
+    "id": 6,
+    "name": "David Adams",
+    "phone": "666-666-6666",
+    "manager": false,
+    "email": "david@gmail.com"
+  },
+  {
+    "id": 7,
+    "name": "Lucy Gibbard",
+    "phone": "777-777-7777",
+    "manager": false,
+    "email": "lucy@gmail.com"
+  },
+  {
+    "id": 8,
+    "name": "John Delamp",
+    "phone": "888-888-8888",
+    "manager": false,
+    "email": "john@gmail.com"
+  },
+  {
+    "id": 9,
+    "name": "Tom Shelby",
+    "phone": "999-999-9999",
+    "manager": true,
+    "email": "tom@gmail.com"
+  },
+  {
+    "id": 10,
+    "name": "Jenny DeFranco",
+    "phone": "101-010-1010",
+    "manager": false,
+    "email": "jenny@gmail.com"
+  },
+  {
+    "id": 11,
+    "name": "Adam Nelson",
+    "phone": "123-456-7890",
+    "manager": false,
+    "email": "adam@gmail.com"
+  },
+  {
+    "id": 12,
+    "name": "Rachel Mole",
+    "phone": "121-212-1212",
+    "manager": false,
+    "email": "rachel@gmail.com"
+  }
+]
