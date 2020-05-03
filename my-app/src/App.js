@@ -1,16 +1,19 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import NavbarComp from "./components/Navbar"
-import Jumbo from "./components/Jumbotron"
-import SearchBar from "./components/SearchBar"
-import employees from "./employees.json"
+import NavbarComp from "./components/Navbar";
+import Jumbo from "./components/Jumbotron";
+import SearchBar from "./components/SearchBar";
+import employees from "./employees.json";
+import EmployeeDisplay from "./components/EmployeeDisplay";
+import Row from "react-bootstrap/Row";
+import Container from 'react-bootstrap/Container';
 
 
 class App extends Component {
 
   state = {
     search: "",
-    results: [employees]
+    results: employees
   };
 
   handleInputChange = event => {
@@ -24,24 +27,28 @@ class App extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
 
-    alert(`You have searched for ${this.state.search}`);
     this.setState({
       search: ""
     });
-  }; 
+  };
 
- render () {
-  return (
-    <>
-    <NavbarComp />
-    <Jumbo />
-    <SearchBar 
-    handleInputChange={this.handleInputChange}
-    handleFormSubmit={this.handleFormSubmit}
-    />
-    </>
-  );
- }
+  render() {
+    return (
+      <>
+        <NavbarComp />
+        <Jumbo />
+        <Container>
+          <SearchBar
+            handleInputChange={this.handleInputChange}
+            handleFormSubmit={this.handleFormSubmit}
+          />
+          <Row className="text-center empDisplay">
+            <EmployeeDisplay employees={this.state.results}/>
+          </Row>
+        </Container>
+      </>
+    );
+  }
 }
 
 export default App;
