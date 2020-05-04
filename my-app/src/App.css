@@ -3,16 +3,4 @@
   margin-top: 2em;
 }
 
-.jumbotron {
-  background-image: url("./assets/images/officeBackground.jpg");
-  background-size: cover;
-  color: #ffffff;
-}
 
-.clearBtn {
-  margin-bottom: 1em;
-}
-
-.filterBtn  {
-  margin-bottom: 1em;
-}
