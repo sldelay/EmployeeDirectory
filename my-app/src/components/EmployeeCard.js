@@ -4,12 +4,14 @@ import Card from 'react-bootstrap/Card';
 
 const EmployeeCard = ({ data }) => {
 
+  const { name, phone, email} = data
+
   return (
-    <Card>
+    <Card className="employeeCard">
       <Card.Body>
-        <h3>{data.name}</h3>
-        <p>{`Phone: ${data.phone}`}</p>
-        <p>{`Email: ${data.email}`}</p>
+        <h3>{name}</h3>
+        <p>{`Phone: ${phone}`}</p>
+        <p>{`Email: ${email}`}</p>
       </Card.Body>
     </Card>
   )
