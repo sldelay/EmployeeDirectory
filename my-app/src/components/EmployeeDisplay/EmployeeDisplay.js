@@ -1,5 +1,8 @@
 import React from "react";
 import EmployeeCard from "../EmployeeCard/EmployeeCard";
+import Alert from "react-bootstrap/Alert";
+import Row from "react-bootstrap/Row";
+import "./style.css";
 
 
 
@@ -35,9 +38,12 @@ const EmployeeDisplay = ({ employees, search, filter, sort }) => {
 
   return (
     <>
+    <Row className="text-center empDisplay">
       {displayList.map(employee => (
         <EmployeeCard key={employee.id} data={employee} />
       ))}
+    </Row>
+      {displayList.length === 0 && <Alert variant="info">Sorry, there is nothing that matches your search!</Alert>}
     </>
   )
 
