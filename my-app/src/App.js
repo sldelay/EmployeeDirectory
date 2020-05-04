@@ -7,14 +7,35 @@ import employees from "./employees.json";
 import EmployeeDisplay from "./components/EmployeeDisplay";
 import Row from "react-bootstrap/Row";
 import Container from 'react-bootstrap/Container';
+import FilterSearch from "./components/Filter";
 
 
 class App extends Component {
 
   state = {
     search: "",
-    results: employees
+    results: employees,
+    filter: "all"
   };
+
+  resetFilter = (event) => {
+    event.preventDefault();
+
+    document.getElementById('inline-radio-All').checked = true;
+    document.getElementById('inline-radio-Employee').checked = false;
+    document.getElementById('inline-radio-Manager').checked = false;
+
+    this.setState({
+      filter: "all"
+    })
+  }
+
+  clearSearch = () => {
+    this.setState({
+      search: ""
+    })
+  }
+
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -24,13 +45,14 @@ class App extends Component {
     });
   };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-
+  handleFilterChange = event => {
+    
+    const {name, value} = event.target;
     this.setState({
-      search: ""
+      [name]: value
     });
-  };
+
+  }
 
   render() {
     return (
@@ -39,11 +61,18 @@ class App extends Component {
         <Jumbo />
         <Container>
           <SearchBar
-            handleInputChange={this.handleInputChange}
-            handleFormSubmit={this.handleFormSubmit}
-          />
+            search={this.state.search}
+            handleInputChange={this.handleInputChange} 
+            clearSearch={this.clearSearch} />
+          <FilterSearch
+            filter={this.state.filter}
+            handleFilterChange={this.handleFilterChange} 
+            resetFilter={this.resetFilter}/>
           <Row className="text-center empDisplay">
-            <EmployeeDisplay employees={this.state.results}/>
+            <EmployeeDisplay 
+            filter={this.state.filter}
+            search={this.state.search} 
+            employees={this.state.results} />
           </Row>
         </Container>
       </>
