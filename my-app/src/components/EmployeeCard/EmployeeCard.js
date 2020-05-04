@@ -13,8 +13,9 @@ const EmployeeCard = ({ data }) => {
       <Card className="employeeCard">
         <Card.Body>
           <h3>{name}</h3>
-          <p>{`Phone: ${phone}`}</p>
-          <p>{`Email: ${email}`}</p>
+          <i class="fas fa-phone"></i><span>{`${phone}`}</span>
+          <br></br>
+          <i class="fas fa-envelope-square"></i><span>{`${email}`}</span>
         </Card.Body>
       </Card>
     </Col>
