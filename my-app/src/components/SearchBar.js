@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import debounce from "lodash.debounce";
 
 const SearchBar = ({ search, handleInputChange, clearSearch }) => {
 
@@ -13,7 +14,7 @@ const SearchBar = ({ search, handleInputChange, clearSearch }) => {
             type="text"
             placeholder="Search something..."
             value={search}
-            onChange={handleInputChange}
+            onChange={ debounce(handleInputChange, 300) }
             name="search"
           />
         </Form.Group>
