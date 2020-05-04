@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import NavbarComp from "./components/Navbar";
-import Jumbo from "./components/Jumbotron";
-import SearchBar from "./components/SearchBar";
+import NavbarComp from "./components/Navbar/Navbar";
+import Jumbo from "./components/Jumbotron/Jumbotron";
+import SearchBar from "./components/SearchBar/SearchBar";
 import employees from "./employees.json";
-import EmployeeDisplay from "./components/EmployeeDisplay";
+import EmployeeDisplay from "./components/EmployeeDisplay/EmployeeDisplay";
 import Row from "react-bootstrap/Row";
 import Container from 'react-bootstrap/Container';
-import FilterSearch from "./components/Filter";
-import SortSearch from "./components/Sort";
+import FilterSearch from "./components/Filter/Filter";
+import SortSearch from "./components/Sort/Sort";
+import debounce from "lodash.debounce";
 
 
 class App extends Component {
@@ -43,19 +44,17 @@ class App extends Component {
   }
 
   clearSearch = () => {
+
+    document.getElementById("searchInput").value = "";
+
     this.setState({
       search: ""
     })
   }
 
-
-  handleInputChange = event => {
-    const { name, value } = event.target;
-
-    this.setState({
-      [name]: value
-    });
-  };
+  handleInputChange = debounce((search) => {
+    this.setState({search});
+  }, 500);
 
   handleFilterChange = event => {
     
