@@ -5,7 +5,6 @@ import Jumbo from "./components/Jumbotron/Jumbotron";
 import SearchBar from "./components/SearchBar/SearchBar";
 import employees from "./employees.json";
 import EmployeeDisplay from "./components/EmployeeDisplay/EmployeeDisplay";
-import Row from "react-bootstrap/Row";
 import Container from 'react-bootstrap/Container';
 import FilterSearch from "./components/Filter/Filter";
 import SortSearch from "./components/Sort/Sort";
@@ -53,12 +52,12 @@ class App extends Component {
   }
 
   handleInputChange = debounce((search) => {
-    this.setState({search});
+    this.setState({ search });
   }, 500);
 
   handleFilterChange = event => {
-    
-    const {name, value} = event.target;
+
+    const { name, value } = event.target;
     this.setState({
       [name]: value
     });
@@ -66,8 +65,8 @@ class App extends Component {
   }
 
   handleSortChange = event => {
-    
-    const {name, value} = event.target;
+
+    const { name, value } = event.target;
     this.setState({
       [name]: value
     });
@@ -82,23 +81,21 @@ class App extends Component {
         <Container>
           <SearchBar
             search={this.state.search}
-            handleInputChange={this.handleInputChange} 
+            handleInputChange={this.handleInputChange}
             clearSearch={this.clearSearch} />
           <FilterSearch
             filter={this.state.filter}
-            handleFilterChange={this.handleFilterChange} 
-            resetFilter={this.resetFilter}/>
-          <SortSearch 
-          sort={this.state.sort}
-          handleSortChange={this.handleSortChange}
-          resetSort={this.resetSort}/>
-          <Row className="text-center empDisplay">
-            <EmployeeDisplay 
+            handleFilterChange={this.handleFilterChange}
+            resetFilter={this.resetFilter} />
+          <SortSearch
+            sort={this.state.sort}
+            handleSortChange={this.handleSortChange}
+            resetSort={this.resetSort} />
+          <EmployeeDisplay
             filter={this.state.filter}
-            search={this.state.search} 
+            search={this.state.search}
             sort={this.state.sort}
             employees={this.state.results} />
-          </Row>
         </Container>
       </>
     );
