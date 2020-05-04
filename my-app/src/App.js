@@ -52,7 +52,7 @@ class App extends Component {
 
   handleInputChange = debounce((search) => {
     this.setState({ search });
-  }, 500);
+  }, 800);
 
   handleFilterChange = event => {
 
