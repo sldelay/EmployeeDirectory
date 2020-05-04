@@ -1,11 +1,11 @@
 import React from 'react';
-import CardColumn from 'react-bootstrap/CardColumns';
 import EmployeeCard from './EmployeeCard';
+import Row from "react-bootstrap/Row";
 
 
 
 
-const EmployeeDisplay = ({ employees, search, filter }) => {
+const EmployeeDisplay = ({ employees, search, filter, sort }) => {
 
   // eslint-disable-next-line
   const empList = employees.filter((data) => {
@@ -27,12 +27,19 @@ const EmployeeDisplay = ({ employees, search, filter }) => {
     }
   })
 
+  let displayList;
+  if (sort === null) {
+    displayList = filterList 
+  } else {
+    displayList = filterList.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
+  }
+
   return (
-    <CardColumn>
-      {filterList.map(employee => (
+    <Row>
+      {displayList.map(employee => (
         <EmployeeCard key={employee.id} data={employee} />
       ))}
-    </CardColumn>
+    </Row>
   )
 
 }
