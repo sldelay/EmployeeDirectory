@@ -1,3 +1,15 @@
 .employeeCard {
   margin-bottom: 1em;
 }
+
+.fa-phone {
+  margin-top: .5em;
+  margin-right: .5em;
+  margin-bottom: 1em;
+  color: #8a0e0e;
+}
+
+.fa-envelope-square {
+  margin-right: .5em;
+  color: #2626eb;
+}
